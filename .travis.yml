@@ -1,0 +1,24 @@
+language: "node_js"
+node_js:
+  - "node"
+install:
+
+  - npm --force uninstall -g gitbook-cli
+  - npm --force uninstall -g gitbook
+  - npm --force install -g gitbook
+  - npm --force install -g gitbook-cli
+  # 安装 gitbook 插件
+  #- gitbook install
+  #- "npm uninstall gitbook"
+  #- "npm uninstall gitbook-cli"
+  #- "npm install -g gitbook"
+  #- "npm install -g gitbook-cli"
+branches:
+  only:
+    - master
+env:
+  global:
+    - GH_REF: github.com/fujianchao/blogs.git
+script:
+  - bash summary_create.sh
+  - travis_wait 100 bash deploy.sh

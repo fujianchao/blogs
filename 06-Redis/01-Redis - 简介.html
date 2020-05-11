@@ -1,0 +1,526 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redis - 简介 · blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="fujianchao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-Redis - 配置参数说明.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../SUMMARY.html">
+            
+                <a href="../SUMMARY.html">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="01-Redis - 简介.html">
+            
+                <a href="01-Redis - 简介.html">
+            
+                    
+                    Redis - 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02-Redis - 配置参数说明.html">
+            
+                <a href="02-Redis - 配置参数说明.html">
+            
+                    
+                    Redis - 配置参数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../07-设计模式/">
+            
+                <a href="../07-设计模式/">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../07-设计模式/01-六大原则.html">
+            
+                <a href="../07-设计模式/01-六大原则.html">
+            
+                    
+                    六大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../07-设计模式/02-单例模式.html">
+            
+                <a href="../07-设计模式/02-单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Redis - 简介</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#redis---&#x7B80;&#x4ECB;"><b></b>Redis - &#x7B80;&#x4ECB;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4ECB;&#x7ECD;--&#x1F340;"><b></b>&#x4ECB;&#x7ECD;  &#x1F340;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;--&#x1F340;"><b></b>&#x5B89;&#x88C5;  &#x1F340;</a></li><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;--&#x1F340;"><b></b>&#x914D;&#x7F6E;  &#x1F340;</a></li><ul><li><span class="title-icon "></span><a href="#&#x67E5;&#x770B;&#x914D;&#x7F6E;--&#x1F340;"><b></b>&#x67E5;&#x770B;&#x914D;&#x7F6E;  &#x1F340;</a></li><li><span class="title-icon "></span><a href="#&#x4FEE;&#x6539;&#x914D;&#x7F6E;--&#x1F340;"><b></b>&#x4FEE;&#x6539;&#x914D;&#x7F6E;  &#x1F340;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;--&#x1F340;"><b></b>&#x6570;&#x636E;&#x7C7B;&#x578B;  &#x1F340;</a></li><ul><li><span class="title-icon "></span><a href="#string--&#x1F340;"><b></b>String  &#x1F340;</a></li><li><span class="title-icon "></span><a href="#hash--&#x1F340;"><b></b>Hash  &#x1F340;</a></li><li><span class="title-icon "></span><a href="#list--&#x1F340;"><b></b>List  &#x1F340;</a></li><li><span class="title-icon "></span><a href="#set--&#x1F340;"><b></b>Set  &#x1F340;</a></li><li><span class="title-icon "></span><a href="#zset--&#x1F340;"><b></b>zset  &#x1F340;</a></li></ul></ul></ul></div><a href="#redis---&#x7B80;&#x4ECB;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="redis---&#x7B80;&#x4ECB;"><a name="redis---&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#redis---&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>Redis - &#x7B80;&#x4ECB;</h1>
+<h2 id="&#x4ECB;&#x7ECD;--&#x1F340;"><a name="&#x4ECB;&#x7ECD;--&#x1F340;" class="anchor-navigation-ex-anchor" href="#&#x4ECB;&#x7ECD;--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4ECB;&#x7ECD;  &#x1F340;</h2>
+<p>REmote DIctionary Server(Redis) &#x662F;&#x4E00;&#x4E2A;&#x7531; Salvatore Sanfilippo &#x5199;&#x7684; <code>key-value</code> &#x5B58;&#x50A8;&#x7CFB;&#x7EDF;</p>
+<p>Redis&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x4F7F;&#x7528; <code>ANSI C</code> &#x8BED;&#x8A00;&#x7F16;&#x5199; , &#x9075;&#x5B88;BSD&#x534F;&#x8BAE; , &#x652F;&#x6301;&#x7F51;&#x7EDC; , &#x53EF;&#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x4EA6;&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7684;&#x65E5;&#x5FD7;&#x578B; , <code>Key-Value</code> &#x6570;&#x636E;&#x5E93; , &#x5E76;&#x63D0;&#x4F9B;&#x591A;&#x79CD;&#x8BED;&#x8A00;&#x7684;API</p>
+<p><strong>&#x7279;&#x70B9;</strong></p>
+<p>Redis &#x4E0E;&#x5176;&#x4ED6; key - value &#x7F13;&#x5B58;&#x4EA7;&#x54C1;&#x6709;&#x4EE5;&#x4E0B;&#x4E09;&#x4E2A;&#x7279;&#x70B9; : </p>
+<ul>
+<li>Redis&#x652F;&#x6301;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316; , &#x53EF;&#x4EE5;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4FDD;&#x6301;&#x5728;&#x78C1;&#x76D8;&#x4E2D; , &#x91CD;&#x542F;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x518D;&#x6B21;&#x52A0;&#x8F7D;&#x8FDB;&#x884C;&#x4F7F;&#x7528;</li>
+<li>Redis&#x4E0D;&#x4EC5;&#x4EC5;&#x652F;&#x6301;&#x7B80;&#x5355;&#x7684; <code>key-value</code> &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E; , &#x540C;&#x65F6;&#x8FD8;&#x63D0;&#x4F9B; list , set , zset , hash&#x7B49;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x5B58;&#x50A8;</li>
+<li>Redis&#x652F;&#x6301;&#x6570;&#x636E;&#x7684;&#x5907;&#x4EFD; , &#x5373; <code>master-slave</code> &#x6A21;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x5907;&#x4EFD;</li>
+</ul>
+<p><strong>&#x4F18;&#x52BF;</strong></p>
+<ul>
+<li>&#x6027;&#x80FD;&#x6781;&#x9AD8; &#x2013; Redis&#x80FD;&#x8BFB;&#x7684;&#x901F;&#x5EA6;&#x662F; <code>110000&#x6B21;/s</code> , &#x5199;&#x7684;&#x901F;&#x5EA6;&#x662F; <code>81000&#x6B21;/s</code></li>
+<li>&#x4E30;&#x5BCC;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B; &#x2013; Redis&#x652F;&#x6301;&#x4E8C;&#x8FDB;&#x5236;&#x6848;&#x4F8B;&#x7684; Strings , Lists , Hashes , Sets &#x53CA; Ordered Sets &#x6570;&#x636E;&#x7C7B;&#x578B;&#x64CD;&#x4F5C;</li>
+<li>&#x539F;&#x5B50; &#x2013; Redis&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x539F;&#x5B50;&#x6027;&#x7684; , &#x540C;&#x65F6;Redis&#x8FD8;&#x652F;&#x6301;&#x5BF9;&#x51E0;&#x4E2A;&#x64CD;&#x4F5C;&#x5168;&#x5E76;&#x540E;&#x7684;&#x539F;&#x5B50;&#x6027;&#x6267;&#x884C;</li>
+<li>&#x4E30;&#x5BCC;&#x7684;&#x7279;&#x6027; &#x2013; Redis&#x8FD8;&#x652F;&#x6301; <code>publish/subscribe</code> , &#x901A;&#x77E5; key &#x8FC7;&#x671F;&#x7B49;&#x7B49;&#x7279;&#x6027;</li>
+</ul>
+<h2 id="&#x5B89;&#x88C5;--&#x1F340;"><a name="&#x5B89;&#x88C5;--&#x1F340;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;  &#x1F340;</h2>
+<p>&#x65B9;&#x5F0F;&#x4E00;</p>
+<pre><code class="lang-shell">$ yum isntall redis
+</code></pre>
+<p>&#x8FD0;&#x884C;</p>
+<pre><code class="lang-shell">$ redis-server /etc/redis.conf
+</code></pre>
+<p>&#x65B9;&#x5F0F;&#x4E8C; : </p>
+<pre><code class="lang-shell">$ wget http://download.redis.io/releases/redis-4.0.10.tar.gz
+$ tar xzf redis-4.0.10.tar.gz
+$ cd redis-4.0.10
+$ make
+</code></pre>
+<p>&#x8FD0;&#x884C;</p>
+<pre><code class="lang-shell">$ src/redis-server
+</code></pre>
+<p>&#x4E0E;&#x5185;&#x7F6E;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x884C;&#x4EA4;&#x4E92; : </p>
+<pre><code class="lang-shell">$ src/redis-cli
+redis&gt; set foo bar
+OK
+redis&gt; get foo
+&quot;bar&quot;
+</code></pre>
+<h2 id="&#x914D;&#x7F6E;--&#x1F340;"><a name="&#x914D;&#x7F6E;--&#x1F340;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;  &#x1F340;</h2>
+<p>Redis &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E; Redis &#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B; , &#x6587;&#x4EF6;&#x540D;&#x4E3A; <code>redis.conf</code> </p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>CONFIG</code> &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x914D;&#x7F6E;&#x9879; </p>
+<h3 id="&#x67E5;&#x770B;&#x914D;&#x7F6E;--&#x1F340;"><a name="&#x67E5;&#x770B;&#x914D;&#x7F6E;--&#x1F340;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x770B;&#x914D;&#x7F6E;--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67E5;&#x770B;&#x914D;&#x7F6E;  &#x1F340;</h3>
+<p>&#x8BED;&#x6CD5;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; CONFIG GET CONFIG_SETTING_NAME
+</code></pre>
+<p>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; CONFIG GET loglevel
+
+1) &quot;loglevel&quot;
+2) &quot;notice&quot;
+</code></pre>
+<p>&#x4F7F;&#x7528; * &#x53F7;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x914D;&#x7F6E;&#x9879; : </p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; CONFIG GET *
+</code></pre>
+<h3 id="&#x4FEE;&#x6539;&#x914D;&#x7F6E;--&#x1F340;"><a name="&#x4FEE;&#x6539;&#x914D;&#x7F6E;--&#x1F340;" class="anchor-navigation-ex-anchor" href="#&#x4FEE;&#x6539;&#x914D;&#x7F6E;--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4FEE;&#x6539;&#x914D;&#x7F6E;  &#x1F340;</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539; <code>redis.conf</code> &#x6587;&#x4EF6;&#x6216;&#x4F7F;&#x7528; <code>CONFIG SET</code> &#x547D;&#x4EE4;&#x6765;&#x4FEE;&#x6539;&#x914D;&#x7F6E;</p>
+<p>&#x8BED;&#x6CD5;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; CONFIG SET CONFIG_SETTING_NAME NEW_CONFIG_VALUE
+</code></pre>
+<p>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; CONFIG SET loglevel &quot;notice&quot;
+OK
+redis 127.0.0.1:6379&gt; CONFIG GET loglevel
+
+1) &quot;loglevel&quot;
+2) &quot;notice&quot;
+</code></pre>
+<h2 id="&#x6570;&#x636E;&#x7C7B;&#x578B;--&#x1F340;"><a name="&#x6570;&#x636E;&#x7C7B;&#x578B;--&#x1F340;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x7C7B;&#x578B;--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x7C7B;&#x578B;  &#x1F340;</h2>
+<p>Redis&#x652F;&#x6301;&#x4E94;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B; : <code>string (&#x5B57;&#x7B26;&#x4E32;)</code>  , <code>hash (&#x54C8;&#x5E0C;)</code>  , <code>list (&#x5217;&#x8868;)</code>  , <code>set (&#x96C6;&#x5408;)</code> &#x53CA; <code>zset(sorted set : &#x6709;&#x5E8F;&#x96C6;&#x5408;)</code></p>
+<h3 id="string--&#x1F340;"><a name="string--&#x1F340;" class="anchor-navigation-ex-anchor" href="#string--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>String  &#x1F340;</h3>
+<p>string &#x662F; Redis &#x6700;&#x57FA;&#x672C;&#x7684;&#x7C7B;&#x578B; , &#x4F60;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210;&#x4E0E; Memcached &#x4E00;&#x6A21;&#x4E00;&#x6837;&#x7684;&#x7C7B;&#x578B; , &#x4E00;&#x4E2A; key &#x5BF9;&#x5E94;&#x4E00;&#x4E2A; value</p>
+<p>string &#x7C7B;&#x578B;&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x5B89;&#x5168;&#x7684; , &#x610F;&#x601D;&#x662F; Redis &#x7684; string &#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x6570;&#x636E; , &#x6BD4;&#x5982; jpg &#x56FE;&#x7247;&#x6216;&#x8005;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5BF9;&#x8C61;</p>
+<p>string &#x7C7B;&#x578B;&#x662F; Redis &#x6700;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B; , &#x4E00;&#x4E2A;&#x952E;&#x6700;&#x5927;&#x80FD;&#x5B58;&#x50A8; 512 MB</p>
+<p>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; SET name &quot;redis.net.cn&quot;
+OK
+redis 127.0.0.1:6379&gt; GET name
+&quot;redis.net.cn&quot;
+</code></pre>
+<p>&#x5728;&#x4EE5;&#x4E0A;&#x5B9E;&#x4F8B;&#x4E2D;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86; Redis &#x7684; <code>SET</code> &#x548C; <code>GET</code> &#x547D;&#x4EE4; , &#x952E;&#x4E3A; name , &#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4E3A;<code>redis.net.cn</code> </p>
+<p><strong>&#x6CE8;&#x610F; : </strong>&#x4E00;&#x4E2A;&#x952E;&#x6700;&#x5927;&#x80FD;&#x5B58;&#x50A8; 512 MB</p>
+<h3 id="hash--&#x1F340;"><a name="hash--&#x1F340;" class="anchor-navigation-ex-anchor" href="#hash--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>Hash  &#x1F340;</h3>
+<p>Redis hash &#x662F;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x96C6;&#x5408;</p>
+<p>Redis hash &#x662F;&#x4E00;&#x4E2A; string &#x7C7B;&#x578B;&#x7684; <code>field</code> &#x548C; <code>value</code> &#x7684;&#x6620;&#x5C04;&#x8868; , hash &#x7279;&#x522B;&#x9002;&#x5408;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;</p>
+<p>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; HMSET user:1 username redis.net.cn password redis.net.cn points 200
+OK
+redis 127.0.0.1:6379&gt; HGETALL user:1
+1) &quot;username&quot;
+2) &quot;redis.net.cn&quot;
+3) &quot;password&quot;
+4) &quot;redis.net.cn&quot;
+5) &quot;points&quot;
+6) &quot;200&quot;
+redis 127.0.0.1:6379&gt;
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x5B9E;&#x4F8B;&#x4E2D; hash &#x6570;&#x636E;&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x4E86;&#x5305;&#x542B;&#x7528;&#x6237;&#x811A;&#x672C;&#x4FE1;&#x606F;&#x7684;&#x7528;&#x6237;&#x5BF9;&#x8C61; ,  &#x5B9E;&#x4F8B;&#x4E2D;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86; Redis <code>HMSET</code> , <code>HEGTALL</code> &#x547D;&#x4EE4; , <code>user:1</code> &#x4E3A;&#x952E;&#x503C;</p>
+<p>&#x6BCF;&#x4E2A; hash &#x53EF;&#x4EE5;&#x5B58;&#x50A8; <code>2^(32-1)</code> &#x952E;&#x503C;&#x5BF9; , &#x76F8;&#x5F53;&#x4E8E; 40 &#x591A;&#x4EBF; </p>
+<h3 id="list--&#x1F340;"><a name="list--&#x1F340;" class="anchor-navigation-ex-anchor" href="#list--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>List  &#x1F340;</h3>
+<p>Redis &#x5217;&#x8868;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868; , &#x6309;&#x7167;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x6392;&#x5E8F; , &#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5BFC;&#x5217;&#x8868;&#x7684;&#x5934;&#x90E8; (&#x5DE6;&#x8FB9;) &#x6216;&#x8005;&#x5C3E;&#x90E8; (&#x53F3;&#x8FB9;) </p>
+<p>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; lpush redis.net.cn redis
+(integer) 1
+redis 127.0.0.1:6379&gt; lpush redis.net.cn mongodb
+(integer) 2
+redis 127.0.0.1:6379&gt; lpush redis.net.cn rabitmq
+(integer) 3
+redis 127.0.0.1:6379&gt; lrange redis.net.cn 0 10
+1) &quot;rabitmq&quot;
+2) &quot;mongodb&quot;
+3) &quot;redis&quot;
+redis 127.0.0.1:6379&gt;
+</code></pre>
+<p>&#x5217;&#x8868;&#x6700;&#x591A;&#x53EF;&#x5B58;&#x50A8; <code>2^(32-1)</code> &#x5143;&#x7D20; (4294967295 , &#x6BCF;&#x4E2A;&#x5217;&#x8868;&#x53EF;&#x5B58;&#x50A8;40&#x591A;&#x4EBF;)</p>
+<h3 id="set--&#x1F340;"><a name="set--&#x1F340;" class="anchor-navigation-ex-anchor" href="#set--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>Set  &#x1F340;</h3>
+<p>Redis &#x7684; Set &#x662F; string &#x7C7B;&#x578B;&#x7684;&#x65E0;&#x5E8F;&#x96C6;&#x5408;</p>
+<p>&#x96C6;&#x5408;&#x662F;&#x901A;&#x8FC7;&#x54C8;&#x5E0C;&#x8868;&#x5B9E;&#x73B0;&#x7684; , &#x6240;&#x4EE5;&#x6DFB;&#x52A0; , &#x5220;&#x9664; , &#x67E5;&#x627E;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x662F; O(1)</p>
+<p><strong>sadd &#x547D;&#x4EE4;</strong></p>
+<p>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; string &#x5143;&#x7D20;&#x5230; , key &#x5BF9;&#x5E94;&#x7684; set &#x96C6;&#x5408;&#x4E2D; , &#x6210;&#x529F;&#x8FD4;&#x56DE; 1 ,&#x5982;&#x679C;&#x5143;&#x7D20;&#x4EE5;&#x53CA;&#x5728;&#x96C6;&#x5408;&#x4E2D;&#x8FD4;&#x56DE; 0 , key &#x5BF9;&#x5E94;&#x7684; set &#x4E0D;&#x5B58;&#x5728;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;</p>
+<pre><code>sadd key member
+</code></pre><p>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; sadd redis.net.cn redis
+(integer) 1
+redis 127.0.0.1:6379&gt; sadd redis.net.cn mongodb
+(integer) 1
+redis 127.0.0.1:6379&gt; sadd redis.net.cn rabitmq
+(integer) 1
+redis 127.0.0.1:6379&gt; sadd redis.net.cn rabitmq
+(integer) 0
+redis 127.0.0.1:6379&gt; smembers redis.net.cn
+
+1) &quot;rabitmq&quot;
+2) &quot;mongodb&quot;
+3) &quot;redis&quot;
+</code></pre>
+<p><strong>&#x6CE8;&#x610F; : </strong>&#x4EE5;&#x4E0A;&#x5B9E;&#x4F8B;&#x4E2D; <code>rabitmq</code> &#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x6B21; , &#x4F46;&#x6839;&#x636E;&#x96C6;&#x5408;&#x5185;&#x5143;&#x7D20;&#x7684;&#x552F;&#x4E00;&#x6027; , &#x7B2C;&#x4E8C;&#x6B21;&#x63D2;&#x5165;&#x7684;&#x5143;&#x7D20;&#x5C06;&#x88AB;&#x5FFD;&#x7565;</p>
+<p>&#x96C6;&#x5408;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x6210;&#x5458;&#x6570;&#x4E3A; <code>2^(32-1)</code> (4294967295, &#x6BCF;&#x4E2A;&#x96C6;&#x5408;&#x53EF;&#x5B58;&#x50A8;40&#x591A;&#x4EBF;&#x4E2A;&#x6210;&#x5458;)</p>
+<h3 id="zset--&#x1F340;"><a name="zset--&#x1F340;" class="anchor-navigation-ex-anchor" href="#zset--&#x1F340;"><i class="fa fa-link" aria-hidden="true"></i></a>zset  &#x1F340;</h3>
+<p>Redis zset &#x548C; Set &#x4E00;&#x6837;&#x4E5F;&#x662F;string&#x7C7B;&#x578B;&#x5143;&#x7D20;&#x7684;&#x96C6;&#x5408; , &#x4E14;&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x7684;&#x6210;&#x5458;</p>
+<p>&#x4E0D;&#x540C;&#x7684;&#x662F;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x5173;&#x8054;&#x4E00;&#x4E2A; double &#x7C7B;&#x578B;&#x7684;&#x5206;&#x6570; , redis &#x6B63;&#x662F;&#x901A;&#x8FC7;&#x5206;&#x6570;&#x6765;&#x4E3A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x8FDB;&#x884C;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x7684;&#x6392;&#x5E8F;&#x3002;</p>
+<p>zset &#x7684;&#x6210;&#x5458;&#x662F;&#x552F;&#x4E00;&#x7684; , &#x4F46;&#x5206;&#x6570; (score) &#x5374;&#x53EF;&#x4EE5;&#x91CD;&#x590D;</p>
+<p><strong>zadd &#x547D;&#x4EE4;</strong></p>
+<p>&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x5230;&#x96C6;&#x5408; , &#x5143;&#x7D20;&#x5728;&#x96C6;&#x5408;&#x4E2D;&#x5B58;&#x5728;&#x5219;&#x66F4;&#x65B0;&#x5BF9;&#x5E94; score</p>
+<pre><code>zadd key score member
+</code></pre><p>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-shell">redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 redis
+(integer) 1
+redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 mongodb
+(integer) 1
+redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 rabitmq
+(integer) 1
+redis 127.0.0.1:6379&gt; zadd redis.net.cn 0 rabitmq
+(integer) 0
+redis 127.0.0.1:6379&gt; ZRANGEBYSCORE redis.net.cn 0 1000
+
+1) &quot;redis&quot;
+2) &quot;mongodb&quot;
+3) &quot;rabitmq&quot;
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Redis">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-Redis - 配置参数说明.html" class="navigation navigation-next " aria-label="Next page: Redis - 配置参数说明">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redis - 简介","level":"1.3.1","depth":2,"next":{"title":"Redis - 配置参数说明","level":"1.3.2","depth":2,"path":"06-Redis/02-Redis - 配置参数说明.md","ref":"06-Redis/02-Redis - 配置参数说明.md","articles":[]},"previous":{"title":"Redis","level":"1.3","depth":1,"path":"06-Redis/README.md","ref":"06-Redis/README.md","articles":[{"title":"Redis - 简介","level":"1.3.1","depth":2,"path":"06-Redis/01-Redis - 简介.md","ref":"06-Redis/01-Redis - 简介.md","articles":[]},{"title":"Redis - 配置参数说明","level":"1.3.2","depth":2,"path":"06-Redis/02-Redis - 配置参数说明.md","ref":"06-Redis/02-Redis - 配置参数说明.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","toggle-chapters","theme-comscore","splitter","github","-sharing","-lunr","-search","search-plus","anchor-navigation-ex-toc@0.0.9","editlink","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/fujianchao/blogs"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/fujianchao/blogs/blob/master"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"fujianchao","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"blog","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null}},"gitbook":"*","description":"my notes","extension":null},"file":{"path":"06-Redis/01-Redis - 简介.md","mtime":"2020-05-11T09:35:20.703Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-11T09:36:33.030Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
