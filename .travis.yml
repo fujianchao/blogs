@@ -2,12 +2,11 @@ language: "node_js"
 node_js:
   - "node"
 install:
-  - rm -rf ../lib/node_modules/gitbook-cli/bin/gitbook.js
-  - rm -rf /home/travis/.nvm/versions/node/v14.2.0/bin/gitbook
-  - npm uninstall -g gitbook-cli
-  - npm uninstall -g gitbook
-  - npm install -g gitbook
-  - npm install -g gitbook-cli
+
+  - npm --force uninstall -g gitbook-cli
+  - npm --force uninstall -g gitbook
+  - npm --force install -g gitbook
+  - npm --force install -g gitbook-cli
   # 安装 gitbook 插件
   #- gitbook install
   #- "npm uninstall gitbook"
