@@ -2,10 +2,10 @@ language: "node_js"
 node_js:
   - "node"
 install:
-  - sudo npm uninstall -g gitbook-cli
-  - sudo npm uninstall -g gitbook
-  - sudo npm install -g gitbook
-  - sudo npm install -g gitbook-cli
+  - npm uninstall -g gitbook-cli
+  - npm uninstall -g gitbook
+  - npm install -g gitbook
+  - npm install -g gitbook-cli
   # 安装 gitbook 插件
   #- gitbook install
   #- "npm uninstall gitbook"
